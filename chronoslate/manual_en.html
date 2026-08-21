@@ -11,22 +11,6 @@
   --slate-blue:#3F6285; --warn-bg:#F7EFDF; --warn-line:#B98A34;
   --rail:#DDE1E6;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#15171B; --surface:#1D2027; --surface-2:#23272F; --line:#333944;
-    --ink:#E4E7EC; --ink-soft:#AEB5BF; --ink-faint:#7C848F;
-    --amber:#D98F2B; --amber-glow:#F0B45C;
-    --slate-blue:#89A9C6; --warn-bg:#26211A; --warn-line:#8A6524;
-    --rail:#262B33;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#15171B; --surface:#1D2027; --surface-2:#23272F; --line:#333944;
-  --ink:#E4E7EC; --ink-soft:#AEB5BF; --ink-faint:#7C848F;
-  --amber:#D98F2B; --amber-glow:#F0B45C;
-  --slate-blue:#89A9C6; --warn-bg:#26211A; --warn-line:#8A6524;
-  --rail:#262B33;
-}
 
 *{box-sizing:border-box}
 body{
@@ -247,10 +231,19 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="terms">
     <h2>📜 License</h2>
-    <p>ChronoSlate is licensed under the <strong>VN3 License</strong>.</p>
+    <p>ChronoSlate is licensed under the <strong>VN3 License</strong>. The full text is available in four languages.</p>
+    <div class="tw"><table>
+      <tr><td>日本語</td><td><a href="https://drive.google.com/file/d/1YGcujgpOi8huoYNxR_YlwQZgFhLaXm7u/view?usp=sharing">規約全文 (JP)</a></td></tr>
+      <tr><td>English</td><td><a href="https://drive.google.com/file/d/17r6f87BiZ9hmVtd6YBKH-vX8zwuSn_J2/view?usp=drive_link">Terms of Use (EN)</a></td></tr>
+      <tr><td>한국어</td><td><a href="https://drive.google.com/file/d/1-_rLOL0tYVVXwfB0Zz4uQ-FN4W7jaZfO/view?usp=drive_link">이용규약 (KO)</a></td></tr>
+      <tr><td>中文</td><td><a href="https://drive.google.com/file/d/1IRC6_sNsHX1mgAnYm0r_3knWNUq7JKeU/view?usp=sharing">使用条款 (ZH)</a></td></tr>
+    </table></div>
     <div class="note">
-      <p><strong>The Japanese license PDF included in the downloaded zip is the authoritative text.</strong> It is not inside the unitypackage — look in the extracted zip. The summary below is provided for convenience only; where the two differ, the PDF governs.</p>
+      <p>These terms use the <a href="https://www.vn3.org/">VN3 License</a> template created by Hiroko Ashiyama (<a href="https://x.com/hiroko_TB">@hiroko_TB</a>).</p>
+      <p><strong>If any discrepancy arises between languages, the Japanese version prevails.</strong></p>
     </div>
+
+    <p>The summary below is provided for convenience only; the full text above governs.</p>
 
     <h3>You may</h3>
     <ul>
