@@ -114,7 +114,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <p class="brand">クロノスレート<small>CHRONOSLATE v1.0.0</small></p>
   <p class="lang"><span class="on">日本語</span> / <a href="manual_en.html">ENGLISH</a></p>
   <nav>
-    <a href="#about"><span>🕰</span>ChronoSlate とは</a>
+    <a href="#about"><span>🕰</span>ChronoSlateとは</a>
     <a href="#env"><span>📦</span>動作環境</a>
     <a href="#setup"><span>🔰</span>導入手順</a>
     <a href="#config"><span>⚙️</span>時刻の設定</a>
@@ -132,14 +132,14 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <section id="about">
     <p class="eyebrow">VRCHAT WORLD GIMMICK</p>
     <h1>クロノスレート 説明書</h1>
-    <p class="lede">VRChat のワールドに設置する、壁掛けサイズの時計ギミックです。ワールドにいる全員が同じ時刻を見ます。</p>
+    <p class="lede">VRChatのワールドに設置する、壁掛けサイズの時計ギミックです。ワールドにいる全員が同じ時刻を見ます。</p>
 
     <div class="slate">
       <p class="clock" id="clock">--<span class="sep">:</span>--</p>
-      <p class="slate-note">こんな見え方をします。数字は発光し、枠の質感は 24 種類から選べます。</p>
+      <p class="slate-note">こんな見え方をします。数字は発光し、枠の質感は24種類から選べます。</p>
     </div>
 
-    <p>表示するのは各プレイヤーのローカル時刻ではなく、<strong>VRChat のネットワーク時刻</strong>です。「23 時になったら解散」のようなワールド内で共有される約束は、全員が同じ数字を見ていないと成立しません。そのため本ギミックは共有時刻のみを扱います。</p>
+    <p>表示するのは各プレイヤーのローカル時刻ではなく、<strong>VRChatのネットワーク時刻</strong>です。「23時になったら解散」のようなワールド内で共有される約束は、全員が同じ数字を見ていないと成立しません。そのため本ギミックは共有時刻のみを扱います。</p>
     <p>設置して時刻を合わせるだけで動きます。同期の設定やイベントの配線は必要ありません。</p>
   </section>
 
@@ -153,32 +153,32 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><td><strong>Poiyomi Toon Shader</strong></td><td class="num">9.3.64</td></tr>
     </table></div>
     <div class="note">
-      <p><strong>Poiyomi Toon は必須です。</strong>未導入だとマテリアルがピンク（マゼンタ）表示になります。<a href="https://poi.moe/">poi.moe</a> から VCC 用リポジトリを追加して導入できます。</p>
+      <p><strong>Poiyomi Toonは必須です。</strong>未導入だとマテリアルがピンク（マゼンタ）表示になります。<a href="https://poi.moe/">poi.moe</a>からVCC用リポジトリを追加して導入できます。</p>
     </div>
     <div class="note">
-      <p><strong>Quest（Android）には対応していません。</strong>Poiyomi が Quest で動作しないためです。PC 版ワールドでご利用ください。</p>
+      <p><strong>Quest（Android）には対応していません。</strong>PoiyomiがQuestで動作しないためです。PC版ワールドでご利用ください。</p>
     </div>
-    <p>上記以外への依存はありません。TextMeshPro も必要ありません。</p>
+    <p>上記以外への依存はありません。TextMeshProも必要ありません。</p>
   </section>
 
   <section id="setup">
     <h2>🔰 導入手順</h2>
     <ol class="steps">
       <li>VCC（Creator Companion）で対象のワールドプロジェクトを開き、「動作環境」を満たしていることを確認します。</li>
-      <li><code>ChronoSlate_v1.0.0.unitypackage</code> をインポートします（<code>Assets &gt; Import Package &gt; Custom Package</code>）。<code>Assets/KinariYugijo/ChronoSlate/</code> に展開されます。</li>
-      <li><code>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab</code> をシーンの Hierarchy へドラッグ＆ドロップします。</li>
+      <li><code>ChronoSlate_v1.0.0.unitypackage</code>をインポートします（<code>Assets &gt; Import Package &gt; Custom Package</code>）。<code>Assets/KinariYugijo/ChronoSlate/</code>に展開されます。</li>
+      <li><code>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab</code>をシーンのHierarchyへドラッグ＆ドロップします。</li>
       <li>位置・向き・大きさを調整し、次の「時刻の設定」でタイムゾーンを合わせます。</li>
     </ol>
   </section>
 
   <section id="config">
     <h2>⚙️ 時刻の設定</h2>
-    <p>配置したプレハブのルート <code>ChronoSlate</code> にある <strong>ChronoSlateCore</strong> で設定します。</p>
+    <p>配置したプレハブのルート<code>ChronoSlate</code>にある<strong>ChronoSlateCore</strong>で設定します。</p>
     <div class="tw"><table>
       <tr><th>項目</th><th>説明</th><th>既定値</th></tr>
-      <tr><td>UTC オフセット（時）</td><td>表示する時刻のタイムゾーン</td><td class="num">9</td></tr>
+      <tr><td>UTCオフセット（時）</td><td>表示する時刻のタイムゾーン</td><td class="num">9</td></tr>
     </table></div>
-    <p><strong>小数で指定できます。</strong>30 分・45 分ずれのタイムゾーンにも対応しています。負の値も使えます。</p>
+    <p><strong>小数で指定できます。</strong>30分・45分ずれのタイムゾーンにも対応しています。負の値も使えます。</p>
     <div class="tw"><table>
       <tr><th>地域</th><th>設定値</th></tr>
       <tr><td>日本（JST）</td><td class="num">9</td></tr>
@@ -187,52 +187,52 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><td>イギリス（GMT）</td><td class="num">0</td></tr>
       <tr><td>アメリカ西海岸（PST）</td><td class="num">-8</td></tr>
     </table></div>
-    <p>表示は <strong>時 : 分</strong> です。秒は表示しません。</p>
+    <p>表示は<strong>時 : 分</strong>です。秒は表示しません。</p>
   </section>
 
   <section id="size">
     <h2>📐 大きさと配置</h2>
-    <p>既定のサイズは <span class="num">約 5.03m × 1.82m × 0.49m</span> です。広い壁面を想定した寸法なので、卓上や小さめの壁に置く場合はルートの Scale で縮めてください。</p>
+    <p>既定のサイズは<span class="num">約5.03m × 1.82m × 0.49m</span>です。広い壁面を想定した寸法なので、卓上や小さめの壁に置く場合はルートのScaleで縮めてください。</p>
     <p>壁掛け・自立・宙吊りなど設置方法は問いません。当たり判定やインタラクションを持たないため、プレイヤーの移動を妨げることもありません。</p>
   </section>
 
   <section id="look">
     <h2>🎨 見た目を変える</h2>
-    <p>Renderer のマテリアルを差し替えるだけで質感が変わります。<strong><code>Common</code> の素材は枠・数字・背面のどこにでも使えます。</strong>部位を限定していません。</p>
+    <p>Rendererのマテリアルを差し替えるだけで質感が変わります。<strong><code>Common</code>の素材は枠・数字・背面のどこにでも使えます。</strong>部位を限定していません。</p>
 
-    <h3>Materials/Common — 24 種</h3>
+    <h3>Materials/Common — 24種</h3>
     <ul class="chips">
       <li>Fabric01–06</li><li>Glass01–02</li><li>Lava01</li><li>Metal01–05</li><li>Stone01–05</li><li>Wood01–05</li>
     </ul>
 
-    <h3>Materials/Back — 背面用 6 種</h3>
+    <h3>Materials/Back — 背面用6種</h3>
     <ul class="chips"><li>Emission01</li><li>Emission02</li><li>Emission03</li><li>Emission04</li><li>Emission05</li><li>Emission06</li></ul>
 
-    <h3>Materials/Number — 数字用 6 種</h3>
+    <h3>Materials/Number — 数字用6種</h3>
     <ul class="chips"><li>Emission1</li><li>Emission2</li><li>Emission3</li><li>Glass1</li><li>Glitter1</li><li>White</li></ul>
 
     <div class="note">
-      <p><strong>Glass 系は描画負荷が高めです。</strong><code>Common_Glass01</code> / <code>Common_Glass02</code> / <code>Number_Glass1</code> は Poiyomi Toon Grab Pass を使用しています。GrabPass は負荷が高く、ミラー内で意図しない見え方になる場合があります。負荷が気になるワールドでは他の素材をご利用ください。</p>
+      <p><strong>Glass系は描画負荷が高めです。</strong><code>Common_Glass01</code> / <code>Common_Glass02</code> / <code>Number_Glass1</code>はPoiyomi Toon Grab Passを使用しています。GrabPassは負荷が高く、ミラー内で意図しない見え方になる場合があります。負荷が気になるワールドでは他の素材をご利用ください。</p>
     </div>
   </section>
 
   <section id="faq">
     <h2>❓ よくあるご質問</h2>
     <h3>時刻がずれています</h3>
-    <p>UTC オフセットの設定をご確認ください。日本標準時なら <code>9</code> です。</p>
+    <p>UTCオフセットの設定をご確認ください。日本標準時なら<code>9</code>です。</p>
     <h3>マテリアルがピンクになります</h3>
-    <p>Poiyomi Toon が導入されていません。「動作環境」をご確認ください。</p>
-    <h3>Quest で使えますか</h3>
-    <p>使えません。Poiyomi が Quest 非対応のためです。</p>
+    <p>Poiyomi Toonが導入されていません。「動作環境」をご確認ください。</p>
+    <h3>Questで使えますか</h3>
+    <p>使えません。PoiyomiがQuest非対応のためです。</p>
     <h3>秒は表示できますか</h3>
-    <p>できません。表示は 4 桁で、時 : 分 の固定です。</p>
+    <p>できません。表示は4桁で、時 : 分 の固定です。</p>
     <h3>プレイヤーごとに違う時刻を出せますか</h3>
     <p>できません。ワールド内で共有される時刻のみを扱う設計です。</p>
   </section>
 
   <section id="terms">
     <h2>📜 利用規約</h2>
-    <p>本データの利用条件は <strong>VN3 ライセンス</strong>に基づきます。規約全文は以下からご確認ください。</p>
+    <p>本データの利用条件は<strong>VN3ライセンス</strong>に基づきます。規約全文は以下からご確認ください。</p>
     <div class="tw"><table>
       <tr><td>日本語</td><td><a href="https://drive.google.com/file/d/1YGcujgpOi8huoYNxR_YlwQZgFhLaXm7u/view?usp=sharing">規約全文 (JP)</a></td></tr>
       <tr><td>English</td><td><a href="https://drive.google.com/file/d/17r6f87BiZ9hmVtd6YBKH-vX8zwuSn_J2/view?usp=drive_link">Terms of Use (EN)</a></td></tr>
@@ -247,17 +247,17 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="credits">
     <h2>🌱 使用素材</h2>
-    <p>利用規約の「特記事項」に記載のとおり、本データの一部には <strong>CC0 ライセンスの第三者素材</strong>が含まれます。<strong>これらの CC0 素材には VN3 ライセンスの制限（再配布の禁止等）は適用されず、元の CC0 ライセンスが優先されます。</strong></p>
+    <p>利用規約の「特記事項」に記載のとおり、本データの一部には<strong>CC0ライセンスの第三者素材</strong>が含まれます。<strong>これらのCC0素材にはVN3ライセンスの制限（再配布の禁止等）は適用されず、元のCC0ライセンスが優先されます。</strong></p>
     <div class="tw"><table>
       <tr><th>区分</th><th>対象</th></tr>
-      <tr><td>CC0（<a href="https://ambientcg.com/">ambientCG</a>）</td><td><code>Textures/Common/</code> 配下の全 76 枚</td></tr>
-      <tr><td>自作</td><td>上記以外すべて（モデル・マテリアル・プレハブ・スクリプト、<code>Textures/Back/</code> 5 枚、<code>Textures/Number/</code> 1 枚）</td></tr>
+      <tr><td>CC0（<a href="https://ambientcg.com/">ambientCG</a>）</td><td><code>Textures/Common/</code>配下の全76枚</td></tr>
+      <tr><td>自作</td><td>上記以外すべて（モデル・マテリアル・プレハブ・スクリプト、<code>Textures/Back/</code> 5枚、<code>Textures/Number/</code> 1枚）</td></tr>
     </table></div>
 
-    <h3>CC0 素材の内訳（ambientCG）</h3>
-    <p>クレジット表記は CC0 のため義務ではありませんが、出所を明らかにするため列挙します。ライセンス全文は <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> をご確認ください。</p>
+    <h3>CC0素材の内訳（ambientCG）</h3>
+    <p>クレジット表記はCC0のため義務ではありませんが、出所を明らかにするため列挙します。ライセンス全文は<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>をご確認ください。</p>
     <div class="tw"><table>
-      <tr><th>フォルダ</th><th>元素材 ID</th><th>出典</th></tr>
+      <tr><th>フォルダ</th><th>元素材ID</th><th>出典</th></tr>
       <tr><td class="num">Fabric01</td><td class="num">Fabric004</td><td><a href="https://ambientcg.com/view?id=Fabric004">ambientcg.com</a></td></tr>
       <tr><td class="num">Fabric02</td><td class="num">Fabric048</td><td><a href="https://ambientcg.com/view?id=Fabric048">ambientcg.com</a></td></tr>
       <tr><td class="num">Fabric03</td><td class="num">Leather028</td><td><a href="https://ambientcg.com/view?id=Leather028">ambientcg.com</a></td></tr>
@@ -281,7 +281,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><td class="num">Wood04</td><td class="num">Wood030</td><td><a href="https://ambientcg.com/view?id=Wood030">ambientcg.com</a></td></tr>
       <tr><td class="num">Wood05</td><td class="num">Wicker013</td><td><a href="https://ambientcg.com/view?id=Wicker013">ambientcg.com</a></td></tr>
     </table></div>
-    <p>同梱にあたり、解像度の縮小・ビット深度の変更・ファイル名の変更を行っています。CC0 のため改変・再配布とも制限はありません。<code>Materials/Common/</code> の Glass01・Glass02 はテクスチャを使用していません。</p>
+    <p>同梱にあたり、解像度の縮小・ビット深度の変更・ファイル名の変更を行っています。CC0のため改変・再配布とも制限はありません。<code>Materials/Common/</code>のGlass01・Glass02はテクスチャを使用していません。</p>
   </section>
 
   <section id="contact">
@@ -300,7 +300,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><th>版</th><th>日付</th><th>内容</th></tr>
       <tr><td class="num">v1.0.0</td><td class="num">2026-08-21</td><td>初版公開</td></tr>
     </table></div>
-    <footer>クロノスレート ChronoSlate — きなりの遊戯場 / 制作: きなり</footer>
+    <footer>クロノスレートChronoSlate — きなりの遊戯場 /制作: きなり</footer>
   </section>
 </main>
 </div>
