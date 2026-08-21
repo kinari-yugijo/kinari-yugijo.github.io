@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>クロノスレート説明書</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,20 +53,15 @@ p{margin:0 0 14px; max-width:64ch}
 ul,ol{margin:0 0 14px; padding-left:1.4em; max-width:64ch}
 li{margin-bottom:6px}
 .lede{font-size:17px; color:var(--ink-soft); max-width:60ch}
+.lede p{margin:0 0 4px; line-height:1.7}
+.lede p:last-child{margin:0}
 .eyebrow{font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.18em; color:var(--amber); margin:0 0 12px}
 
-.slate{
-  margin:26px 0 40px; padding:30px 34px; border-radius:3px;
-  background:var(--surface); border:1px solid var(--line);
-  border-left:3px solid var(--amber);
-  display:flex; flex-wrap:wrap; align-items:center; gap:28px; justify-content:space-between;
+.shot{margin:26px 0 0; padding:0}
+.shot img{
+  display:block; width:100%; max-width:511px; height:auto;
+  border:1px solid var(--line); border-radius:3px;
 }
-.clock{
-  font-family:"JetBrains Mono",monospace; font-weight:700; font-size:54px; line-height:1;
-  color:var(--amber-glow); font-variant-numeric:tabular-nums; letter-spacing:.02em; margin:0;
-}
-.clock .sep{opacity:.55}
-.slate-note{font-size:13px; color:var(--ink-faint); max-width:30ch; line-height:1.8; margin:0}
 
 .tw{overflow-x:auto; margin:0 0 16px}
 table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
@@ -104,7 +101,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   .side nav a{font-size:13px; padding:6px 9px}
   main{padding:32px 22px 90px}
   h1{font-size:30px}
-  .clock{font-size:42px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
 </style>
@@ -132,15 +128,15 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <section id="about">
     <p class="eyebrow">VRCHAT WORLD GIMMICK</p>
     <h1>クロノスレート 説明書</h1>
-    <p class="lede">VRChatのワールドに設置する、壁掛けサイズの時計ギミックです。ワールドにいる全員が同じ時刻を見ます。</p>
-
-    <div class="slate">
-      <p class="clock" id="clock">--<span class="sep">:</span>--</p>
-      <p class="slate-note">こんな見え方をします。数字は発光し、枠の質感は24種類から選べます。</p>
+    <div class="lede">
+      <p>VRChat用の立体時計ギミックです。</p>
+      <p>VRChatのネットワーク時刻を表示します。</p>
     </div>
 
-    <p>表示するのは各プレイヤーのローカル時刻ではなく、<strong>VRChatのネットワーク時刻</strong>です。「23時になったら解散」のようなワールド内で共有される約束は、全員が同じ数字を見ていないと成立しません。そのため本ギミックは共有時刻のみを扱います。</p>
-    <p>設置して時刻を合わせるだけで動きます。同期の設定やイベントの配線は必要ありません。</p>
+    <figure class="shot">
+      <img src="img/title.png" width="511" height="255" decoding="async"
+           alt="ワールドに設置したクロノスレート。大理石の枠の中で12:34の数字が水色に発光している">
+    </figure>
   </section>
 
   <section id="env">
@@ -305,16 +301,3 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 </main>
 </div>
 
-<script>
-(function () {
-  var el = document.getElementById("clock");
-  function tick() {
-    var d = new Date();
-    var h = String(d.getHours()).padStart(2, "0");
-    var m = String(d.getMinutes()).padStart(2, "0");
-    el.innerHTML = h + '<span class="sep">:</span>' + m;
-  }
-  tick();
-  setInterval(tick, 10000);
-})();
-</script>

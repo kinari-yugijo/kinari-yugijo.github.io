@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ChronoSlate Manual</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,20 +53,15 @@ p{margin:0 0 14px; max-width:66ch}
 ul,ol{margin:0 0 14px; padding-left:1.4em; max-width:66ch}
 li{margin-bottom:6px}
 .lede{font-size:17.5px; color:var(--ink-soft); max-width:60ch; line-height:1.65}
+.lede p{margin:0 0 4px; line-height:1.55}
+.lede p:last-child{margin:0}
 .eyebrow{font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.18em; color:var(--amber); margin:0 0 12px}
 
-.slate{
-  margin:26px 0 40px; padding:30px 34px; border-radius:3px;
-  background:var(--surface); border:1px solid var(--line);
-  border-left:3px solid var(--amber);
-  display:flex; flex-wrap:wrap; align-items:center; gap:28px; justify-content:space-between;
+.shot{margin:26px 0 0; padding:0}
+.shot img{
+  display:block; width:100%; max-width:511px; height:auto;
+  border:1px solid var(--line); border-radius:3px;
 }
-.clock{
-  font-family:"JetBrains Mono",monospace; font-weight:700; font-size:54px; line-height:1;
-  color:var(--amber-glow); font-variant-numeric:tabular-nums; letter-spacing:.02em; margin:0;
-}
-.clock .sep{opacity:.55}
-.slate-note{font-size:13px; color:var(--ink-faint); max-width:32ch; line-height:1.7; margin:0}
 
 .tw{overflow-x:auto; margin:0 0 16px}
 table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
@@ -104,7 +101,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   .side nav a{font-size:13px; padding:6px 9px}
   main{padding:32px 22px 90px}
   h1{font-size:31px}
-  .clock{font-size:42px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
 </style>
@@ -132,15 +128,15 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <section id="about">
     <p class="eyebrow">VRCHAT WORLD GIMMICK</p>
     <h1>ChronoSlate Manual</h1>
-    <p class="lede">A wall-sized clock for your VRChat world. Everyone in the instance sees the same time.</p>
-
-    <div class="slate">
-      <p class="clock" id="clock">--<span class="sep">:</span>--</p>
-      <p class="slate-note">This is roughly how it reads. The digits glow, and the frame comes in 24 finishes.</p>
+    <div class="lede">
+      <p>A three-dimensional clock gimmick for VRChat worlds.</p>
+      <p>It displays VRChat network time.</p>
     </div>
 
-    <p>ChronoSlate shows <strong>VRChat network time</strong>, not each player's local clock. Agreements that live inside a world — "we break at 23:00" — only work if everyone is looking at the same number. That is why this gimmick deals in shared time only.</p>
-    <p>Drop it in, set the time zone, done. There is no syncing to configure and no events to wire up.</p>
+    <figure class="shot">
+      <img src="img/title.png" width="511" height="255" decoding="async"
+           alt="ChronoSlate installed in a world: the digits 12:34 glowing pale blue inside a marble frame">
+    </figure>
   </section>
 
   <section id="env">
@@ -305,16 +301,3 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 </main>
 </div>
 
-<script>
-(function () {
-  var el = document.getElementById("clock");
-  function tick() {
-    var d = new Date();
-    var h = String(d.getHours()).padStart(2, "0");
-    var m = String(d.getMinutes()).padStart(2, "0");
-    el.innerHTML = h + '<span class="sep">:</span>' + m;
-  }
-  tick();
-  setInterval(tick, 10000);
-})();
-</script>
