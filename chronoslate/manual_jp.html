@@ -59,9 +59,10 @@ li{margin-bottom:6px}
 
 .shot{margin:26px 0 0; padding:0}
 .shot img{
-  display:block; width:100%; max-width:511px; height:auto;
+  display:block; max-width:100%; height:auto;
   border:1px solid var(--line); border-radius:3px;
 }
+.shot figcaption{margin-top:8px; font-size:13px; color:var(--ink-faint)}
 
 .tw{overflow-x:auto; margin:0 0 16px}
 table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
@@ -130,59 +131,72 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h1>クロノスレート 説明書</h1>
     <div class="lede">
       <p>VRChat用の立体時計ギミックです。</p>
-      <p>VRChatのネットワーク時刻を表示します。</p>
+      <p>同梱しているマテリアルを差し替えることで、雰囲気に合わせたカスタマイズが可能です</p>
+      <p>VRChatのネットワーク時刻を時と分で表示します。</p>
     </div>
 
     <figure class="shot">
       <img src="img/title.png" width="511" height="255" decoding="async"
-           alt="ワールドに設置したクロノスレート。大理石の枠の中で12:34の数字が水色に発光している">
+           alt="VRChatのワールドに設置した時計。枠の中で12:34の数字が水色に発光">
     </figure>
   </section>
 
   <section id="env">
     <h2>📦 動作環境</h2>
-    <p>以下はあらかじめプロジェクトに導入しておいてください。<strong>本パッケージには含まれていません。</strong></p>
     <div class="tw"><table>
       <tr><th>項目</th><th>バージョン</th></tr>
-      <tr><td>Unity</td><td class="num">2022.3.22f1</td></tr>
-      <tr><td>VRChat SDK - Worlds</td><td class="num">3.10.3</td></tr>
+      <tr><td><strong>Unity</strong></td><td class="num">2022.3.22f1</td></tr>
       <tr><td><strong>Poiyomi Toon Shader</strong></td><td class="num">9.3.64</td></tr>
     </table></div>
     <div class="note">
-      <p><strong>Poiyomi Toonは必須です。</strong>未導入だとマテリアルがピンク（マゼンタ）表示になります。<a href="https://poi.moe/">poi.moe</a>からVCC用リポジトリを追加して導入できます。</p>
+      <p><strong>Poiyomi Toon</strong><a href="https://www.poiyomi.com/"> https://www.poiyomi.com/</a></p>
+      <p>VCC / ALCOM / Boothから入手可能です。</p>
     </div>
-    <div class="note">
-      <p><strong>Quest（Android）には対応していません。</strong>PoiyomiがQuestで動作しないためです。PC版ワールドでご利用ください。</p>
-    </div>
-    <p>上記以外への依存はありません。TextMeshProも必要ありません。</p>
   </section>
 
   <section id="setup">
     <h2>🔰 導入手順</h2>
     <ol class="steps">
-      <li>VCC（Creator Companion）で対象のワールドプロジェクトを開き、「動作環境」を満たしていることを確認します。</li>
-      <li><code>ChronoSlate_v1.0.0.unitypackage</code>をインポートします（<code>Assets &gt; Import Package &gt; Custom Package</code>）。<code>Assets/KinariYugijo/ChronoSlate/</code>に展開されます。</li>
-      <li><code>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab</code>をシーンのHierarchyへドラッグ＆ドロップします。</li>
-      <li>位置・向き・大きさを調整し、次の「時刻の設定」でタイムゾーンを合わせます。</li>
+      <li>同梱しているunitypackageをインポートします<br>
+        （unitypackageをD&DあるいはAssets>Import Package>Custom Package）<br>Assets/KinariYugijo/ChronoSlateに展開されます。</li>
+      <li>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefabをシーンのHierarchyへドラッグ＆ドロップします。</li>
+      <li>位置・向き・大きさを調整し、日本以外のタイムゾーンを使用する場合は、次の「時刻の設定」でタイムゾーンを合わせます。</li>
     </ol>
   </section>
 
   <section id="config">
     <h2>⚙️ 時刻の設定</h2>
-    <p>配置したプレハブのルート<code>ChronoSlate</code>にある<strong>ChronoSlateCore</strong>で設定します。</p>
+    <p>配置したChronoSlateにあるChronoSlateコンポーネントで設定します。</p>
+
+    <figure class="shot">
+      <img src="img/timezone.png" width="310" height="146" decoding="async"
+           alt="InspectorのChronoSlateコンポーネント。時刻の項目にUtc Offset Hoursのスライダーがあり、値は9">
+      <figcaption>Inspectorの「時刻」にあるUtc Offset Hoursで設定します。</figcaption>
+    </figure>
+
     <div class="tw"><table>
       <tr><th>項目</th><th>説明</th><th>既定値</th></tr>
-      <tr><td>UTCオフセット（時）</td><td>表示する時刻のタイムゾーン</td><td class="num">9</td></tr>
+      <tr><td>Utc Offset Hours</td><td>表示する時刻のタイムゾーン</td><td class="num">9</td></tr>
     </table></div>
     <p><strong>小数で指定できます。</strong>30分・45分ずれのタイムゾーンにも対応しています。負の値も使えます。</p>
     <div class="tw"><table>
       <tr><th>地域</th><th>設定値</th></tr>
       <tr><td>日本（JST）</td><td class="num">9</td></tr>
-      <tr><td>インド（IST）</td><td class="num">5.5</td></tr>
+      <tr><td>韓国（KST）</td><td class="num">9</td></tr>
+      <tr><td>中国・台湾（CST）</td><td class="num">8</td></tr>
       <tr><td>ネパール（NPT）</td><td class="num">5.75</td></tr>
+      <tr><td>インド（IST）</td><td class="num">5.5</td></tr>
+      <tr><td>フランス・ドイツ（CET）</td><td class="num">1</td></tr>
       <tr><td>イギリス（GMT）</td><td class="num">0</td></tr>
+      <tr><td>アメリカ東海岸（EST）</td><td class="num">-5</td></tr>
       <tr><td>アメリカ西海岸（PST）</td><td class="num">-8</td></tr>
     </table></div>
+    <div class="note">
+      <p><strong>夏時間（サマータイム）は自動で切り替わりません。</strong>固定のオフセットを表示するためです。
+      ヨーロッパやアメリカのように夏時間がある地域に合わせる場合は、切り替わりのたびに値を1増やす・戻す操作が必要です
+      （イギリスなら<span class="num">0</span>→<span class="num">1</span>、アメリカ西海岸なら<span class="num">-8</span>→<span class="num">-7</span>）。
+      日本・韓国・中国・インドには夏時間がないので、一度設定すればそのままで問題ありません。</p>
+    </div>
     <p>表示は<strong>時 : 分</strong>です。秒は表示しません。</p>
   </section>
 

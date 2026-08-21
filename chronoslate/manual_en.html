@@ -59,9 +59,10 @@ li{margin-bottom:6px}
 
 .shot{margin:26px 0 0; padding:0}
 .shot img{
-  display:block; width:100%; max-width:511px; height:auto;
+  display:block; max-width:100%; height:auto;
   border:1px solid var(--line); border-radius:3px;
 }
+.shot figcaption{margin-top:8px; font-size:13px; color:var(--ink-faint)}
 
 .tw{overflow-x:auto; margin:0 0 16px}
 table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
@@ -169,20 +170,37 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="config">
     <h2>⚙️ Time zone</h2>
-    <p>Select the prefab root <code>ChronoSlate</code> and set the field on <strong>ChronoSlateCore</strong>.</p>
+    <p>Select the prefab root <code>ChronoSlate</code> and set the field on the <strong>ChronoSlate</strong> component.</p>
+
+    <figure class="shot">
+      <img src="img/timezone.png" width="310" height="146" decoding="async"
+           alt="The ChronoSlate component in the Inspector, showing the Utc Offset Hours slider set to 9">
+      <figcaption>Set <code>Utc Offset Hours</code> under the time section in the Inspector.</figcaption>
+    </figure>
+
     <div class="tw"><table>
       <tr><th>Field</th><th>Meaning</th><th>Default</th></tr>
-      <tr><td>UTC Offset (hours)</td><td>Time zone of the displayed time</td><td class="num">9</td></tr>
+      <tr><td>Utc Offset Hours</td><td>Time zone of the displayed time</td><td class="num">9</td></tr>
     </table></div>
     <p><strong>Decimals are supported</strong>, so 30- and 45-minute offsets work. Negative values are fine too.</p>
     <div class="tw"><table>
       <tr><th>Region</th><th>Value</th></tr>
       <tr><td>Japan (JST)</td><td class="num">9</td></tr>
-      <tr><td>India (IST)</td><td class="num">5.5</td></tr>
+      <tr><td>Korea (KST)</td><td class="num">9</td></tr>
+      <tr><td>China / Taiwan (CST)</td><td class="num">8</td></tr>
       <tr><td>Nepal (NPT)</td><td class="num">5.75</td></tr>
+      <tr><td>India (IST)</td><td class="num">5.5</td></tr>
+      <tr><td>France / Germany (CET)</td><td class="num">1</td></tr>
       <tr><td>UK (GMT)</td><td class="num">0</td></tr>
+      <tr><td>US East Coast (EST)</td><td class="num">-5</td></tr>
       <tr><td>US West Coast (PST)</td><td class="num">-8</td></tr>
     </table></div>
+    <div class="note">
+      <p><strong>Daylight saving time is not applied automatically</strong> — the offset is fixed.
+      For regions that observe DST, add or subtract an hour when the clocks change
+      (UK <span class="num">0</span> → <span class="num">1</span>, US West Coast <span class="num">-8</span> → <span class="num">-7</span>).
+      Japan, Korea, China and India do not observe DST, so a single setting is enough.</p>
+    </div>
     <p>The display shows <strong>hours : minutes</strong>. Seconds are not shown.</p>
   </section>
 
