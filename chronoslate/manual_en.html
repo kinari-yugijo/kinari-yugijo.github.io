@@ -162,6 +162,16 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <li>Drag Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab into your scene hierarchy.</li>
       <li>Adjust the position, rotation and scale. If you are outside Japan, set your time zone in the next section.</li>
     </ol>
+
+    <h3>Which prefab to use</h3>
+    <p>Four ready-made prefabs are included. Each one works as-is.</p>
+    <div class="tw"><table>
+      <tr><th>Prefab</th><th>What it is</th></tr>
+      <tr><td>ChronoSlate</td><td>The standard one. Shows the clock large</td></tr>
+      <tr><td>ChronoSlate_Picture</td><td>Picture-first. Puts an image of your choice on the backplate</td></tr>
+      <tr><td>ChronoSlate_MiniTimer</td><td>Shows the clock small</td></tr>
+      <tr><td>ChronoSlate_NoBack</td><td>No backplate</td></tr>
+    </table></div>
   </section>
 
   <section id="config">
@@ -206,6 +216,12 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <p>1. Right-click ChronoSlate in the Hierarchy<br>
       2. Choose Kinari-Yugijo&gt;ChronoSlate&gt;Bulk Change Digit Materials<br>
       3. Set any material in the window's New material field</p>
+    </div>
+
+    <div class="note">
+      <p><b>Putting your own image on the backplate</b></p>
+      <p>Replace the Main Texture on <code>Materials/Back/ChronoSlate_Back_Picture01</code> to show any image you like.<br>
+      The ChronoSlate_Picture prefab already uses this material.</p>
     </div>
 
     <h3>Materials/Common — 25 finishes</h3>

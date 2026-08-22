@@ -162,6 +162,16 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <li>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefabをシーンのHierarchyへドラッグ＆ドロップします。</li>
       <li>位置・向き・大きさを調整し、日本以外のタイムゾーンを使用する場合は、次の「時刻の設定」でタイムゾーンを合わせます。</li>
     </ol>
+
+    <h3>プレハブの種類</h3>
+    <p>あらかじめ見た目を調整したプレハブを同梱しています。どれもそのまま使えます。</p>
+    <div class="tw"><table>
+      <tr><th>プレハブ</th><th>内容</th></tr>
+      <tr><td>ChronoSlate</td><td>標準。時計を大きく表示します</td></tr>
+      <tr><td>ChronoSlate_Picture</td><td>画像表示がメイン。背景に好きな画像を出せます</td></tr>
+      <tr><td>ChronoSlate_MiniTimer</td><td>時計を小さく表示します</td></tr>
+      <tr><td>ChronoSlate_NoBack</td><td>背景を無くしています</td></tr>
+    </table></div>
   </section>
 
   <section id="config">
@@ -207,6 +217,12 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <p>1.Hierarchy上のChronoSlateを右クリック<br>
       2.Kinari-Yugijo>ChronoSlate>Bulk Change Digit Materials<br>
       3.ウィンドウのNew materialに任意のマテリアルを設定</p>
+    </div>
+
+    <div class="note">
+      <p><b>背景に好きな画像を出す</b></p>
+      <p><code>Materials/Back/ChronoSlate_Back_Picture01</code>のMain Textureを差し替えると、背景に任意の画像を表示できます。<br>
+      ChronoSlate_Pictureプレハブはこのマテリアルを最初から使っています。</p>
     </div>
 
     <h3>Materials/Common — 25種</h3>
