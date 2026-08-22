@@ -115,8 +115,8 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <a href="#env"><span>📦</span>Requirements</a>
     <a href="#setup"><span>🔰</span>Setup</a>
     <a href="#config"><span>⚙️</span>Time zone</a>
-    <a href="#size"><span>📐</span>Size &amp; placement</a>
-    <a href="#look"><span>🎨</span>Changing the look</a>
+    <a href="#size"><span>📐</span>Placement</a>
+    <a href="#look"><span>🎨</span>Customizing the look</a>
     <a href="#faq"><span>❓</span>FAQ</a>
     <a href="#terms"><span>📜</span>License</a>
     <a href="#credits"><span>🌱</span>Third-party assets</a>
@@ -131,40 +131,36 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h1>ChronoSlate Manual</h1>
     <div class="lede">
       <p>A three-dimensional clock gimmick for VRChat worlds.</p>
-      <p>It displays VRChat network time.</p>
+      <p>Swap the bundled materials to match the mood of your world.</p>
+      <p>It shows VRChat network time as hours and minutes.</p>
     </div>
 
     <figure class="shot">
       <img src="img/title.png" width="511" height="255" decoding="async"
-           alt="ChronoSlate installed in a world: the digits 12:34 glowing pale blue inside a marble frame">
+           alt="A clock installed in a VRChat world, the digits 12:34 glowing pale blue inside the frame">
     </figure>
   </section>
 
   <section id="env">
     <h2>📦 Requirements</h2>
-    <p>Install these in your project first. <strong>They are not included in this package.</strong></p>
     <div class="tw"><table>
       <tr><th>Item</th><th>Version</th></tr>
-      <tr><td>Unity</td><td class="num">2022.3.22f1</td></tr>
-      <tr><td>VRChat SDK - Worlds</td><td class="num">3.10.3</td></tr>
+      <tr><td><strong>Unity</strong></td><td class="num">2022.3.22f1</td></tr>
       <tr><td><strong>Poiyomi Toon Shader</strong></td><td class="num">9.3.64</td></tr>
     </table></div>
     <div class="note">
-      <p><strong>Poiyomi Toon is required.</strong> Without it every material renders magenta. Add the VCC repository from <a href="https://poi.moe/">poi.moe</a> to install it.</p>
+      <p><strong>Poiyomi Toon</strong><a href="https://www.poiyomi.com/"> https://www.poiyomi.com/</a></p>
+      <p>Available through VCC / ALCOM / Booth.</p>
     </div>
-    <div class="note">
-      <p><strong>Quest (Android) is not supported</strong>, because Poiyomi does not run on Quest. Use this in PC worlds.</p>
-    </div>
-    <p>Nothing else is required — not even TextMeshPro.</p>
   </section>
 
   <section id="setup">
     <h2>🔰 Setup</h2>
     <ol class="steps">
-      <li>Open your world project in VCC (Creator Companion) and confirm the requirements above are installed.</li>
-      <li>Import <code>ChronoSlate_v1.0.0.unitypackage</code> via <code>Assets &gt; Import Package &gt; Custom Package</code>. It unpacks to <code>Assets/KinariYugijo/ChronoSlate/</code>.</li>
-      <li>Drag <code>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab</code> into your scene hierarchy.</li>
-      <li>Position and scale it, then set your time zone below.</li>
+      <li>Import the bundled unitypackage<br>
+        (drag and drop it, or use Assets &gt; Import Package &gt; Custom Package)<br>It unpacks to Assets/KinariYugijo/ChronoSlate.</li>
+      <li>Drag Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab into your scene hierarchy.</li>
+      <li>Adjust the position, rotation and scale. If you are outside Japan, set your time zone in the next section.</li>
     </ol>
   </section>
 
@@ -182,66 +178,64 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><th>Field</th><th>Meaning</th><th>Default</th></tr>
       <tr><td>Utc Offset Hours</td><td>Time zone of the displayed time</td><td class="num">9</td></tr>
     </table></div>
-    <p><strong>Decimals are supported</strong>, so 30- and 45-minute offsets work. Negative values are fine too.</p>
+    <p><strong>Decimals are supported</strong>, so 30- and 45-minute offsets work — India is <span class="num">5.5</span>, Nepal <span class="num">5.75</span>. Negative values are fine too.</p>
     <div class="tw"><table>
       <tr><th>Region</th><th>Value</th></tr>
       <tr><td>Japan (JST)</td><td class="num">9</td></tr>
-      <tr><td>Korea (KST)</td><td class="num">9</td></tr>
-      <tr><td>China / Taiwan (CST)</td><td class="num">8</td></tr>
-      <tr><td>Nepal (NPT)</td><td class="num">5.75</td></tr>
-      <tr><td>India (IST)</td><td class="num">5.5</td></tr>
-      <tr><td>France / Germany (CET)</td><td class="num">1</td></tr>
       <tr><td>UK (GMT)</td><td class="num">0</td></tr>
-      <tr><td>US East Coast (EST)</td><td class="num">-5</td></tr>
       <tr><td>US West Coast (PST)</td><td class="num">-8</td></tr>
     </table></div>
-    <div class="note">
-      <p><strong>Daylight saving time is not applied automatically</strong> — the offset is fixed.
-      For regions that observe DST, add or subtract an hour when the clocks change
-      (UK <span class="num">0</span> → <span class="num">1</span>, US West Coast <span class="num">-8</span> → <span class="num">-7</span>).
-      Japan, Korea, China and India do not observe DST, so a single setting is enough.</p>
-    </div>
-    <p>The display shows <strong>hours : minutes</strong>. Seconds are not shown.</p>
   </section>
 
   <section id="size">
-    <h2>📐 Size &amp; placement</h2>
-    <p>The default size is <span class="num">roughly 5.03m &times; 1.82m &times; 0.49m</span> — sized for a large wall. Scale the prefab root down for a desk or a smaller wall.</p>
-    <p>Mount it, stand it, or hang it; placement is up to you. It has no colliders and no interactions, so it never blocks player movement.</p>
+    <h2>📐 Placement</h2>
+    <p>The default size is on the large side, so scale it with the Transform on the prefab root if you want it on a desk.</p>
+    <p>For a wall mount or a hanging setup, you can hide the backplate.<br>
+    To do that, deactivate these GameObjects:</p>
+    <p><b>ChronoSlate&gt;ChronoSlate_Frame&gt;Back</b></p>
+    <p><b>ChronoSlate&gt;ChronoSlate_Frame&gt;Frame&gt;FrameBack</b></p>
   </section>
 
   <section id="look">
-    <h2>🎨 Changing the look</h2>
-    <p>Swap the material on a Renderer and the finish changes. <strong>The <code>Common</code> materials work anywhere</strong> — frame, digits, or backplate. They are not tied to a specific part.</p>
+    <h2>🎨 Customizing the look</h2>
+    <p>The frame, the backplate and the digits can each be re-finished.<br>
+      A range of materials is included, so try a few and find a look you like.</p>
+
+    <div class="note">
+      <p><b>Changing the digit material</b></p>
+      <p>1. Right-click ChronoSlate in the Hierarchy<br>
+      2. Choose きなりの遊戯場&gt;ChronoSlate&gt;数字のマテリアルを一括変更<br>
+      3. Set any material in the window's 変更マテリアル field, then apply</p>
+      <p>The menu and the window are in Japanese.</p>
+    </div>
 
     <h3>Materials/Common — 24 finishes</h3>
+    <p>Materials in this folder can be used anywhere — frame, digits or backplate.</p>
     <ul class="chips">
       <li>Fabric01–06</li><li>Glass01–02</li><li>Lava01</li><li>Metal01–05</li><li>Stone01–05</li><li>Wood01–05</li>
     </ul>
 
     <h3>Materials/Back — 6 backplate finishes</h3>
+    <p>Intended for the backplate.</p>
     <ul class="chips"><li>Emission01</li><li>Emission02</li><li>Emission03</li><li>Emission04</li><li>Emission05</li><li>Emission06</li></ul>
 
     <h3>Materials/Number — 6 digit finishes</h3>
+    <p>Intended for the digits.</p>
     <ul class="chips"><li>Emission1</li><li>Emission2</li><li>Emission3</li><li>Glass1</li><li>Glitter1</li><li>White</li></ul>
 
     <div class="note">
-      <p><strong>The glass finishes are expensive to render.</strong> <code>Common_Glass01</code>, <code>Common_Glass02</code> and <code>Number_Glass1</code> use Poiyomi Toon Grab Pass. GrabPass costs a lot of frame time and can look wrong inside mirrors. Pick another finish if your world is tight on performance.</p>
+      <p><strong>The glass finishes are expensive to render.</strong> <code>Common_Glass01</code>, <code>Common_Glass02</code> and <code>Number_Glass1</code> use Poiyomi Toon Grab Pass. Pick another material if your world is tight on performance.</p>
     </div>
   </section>
 
   <section id="faq">
     <h2>❓ FAQ</h2>
     <h3>The time is wrong</h3>
-    <p>Check the UTC offset. Japan Standard Time is <code>9</code>.</p>
+    <p>See the "Time zone" section. Japan Standard Time is 9.</p>
     <h3>Everything is magenta</h3>
-    <p>Poiyomi Toon is not installed. See Requirements.</p>
-    <h3>Does it work on Quest?</h3>
-    <p>No. Poiyomi does not support Quest.</p>
+    <p>Poiyomi Toon may not be installed. See the "Requirements" section.</p>
     <h3>Can it show seconds?</h3>
-    <p>No. The display is four digits, fixed to hours : minutes.</p>
-    <h3>Can each player see their own local time?</h3>
-    <p>No. ChronoSlate is built around shared time only.</p>
+    <p>No. The display is four digits, fixed to hours:minutes.</p>
   </section>
 
   <section id="terms">
@@ -261,41 +255,8 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="credits">
     <h2>🌱 Third-party assets</h2>
-    <p>As stated in the license's special provisions, part of this package consists of <strong>third-party assets under CC0</strong>. <strong>The VN3 restrictions — including the ban on redistribution — do not apply to those assets; the original CC0 license governs them.</strong></p>
-    <div class="tw"><table>
-      <tr><th>Category</th><th>Scope</th></tr>
-      <tr><td>CC0 (<a href="https://ambientcg.com/">ambientCG</a>)</td><td>All 76 files under <code>Textures/Common/</code></td></tr>
-      <tr><td>Original work</td><td>Everything else — models, materials, prefabs, scripts, the 5 files in <code>Textures/Back/</code> and 1 in <code>Textures/Number/</code></td></tr>
-    </table></div>
-
-    <h3>CC0 asset breakdown (ambientCG)</h3>
-    <p>Attribution is not required under CC0, but the sources are listed here for transparency. Full license text: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.</p>
-    <div class="tw"><table>
-      <tr><th>Folder</th><th>Source ID</th><th>Origin</th></tr>
-      <tr><td class="num">Fabric01</td><td class="num">Fabric004</td><td><a href="https://ambientcg.com/view?id=Fabric004">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric02</td><td class="num">Fabric048</td><td><a href="https://ambientcg.com/view?id=Fabric048">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric03</td><td class="num">Leather028</td><td><a href="https://ambientcg.com/view?id=Leather028">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric04</td><td class="num">Leather024</td><td><a href="https://ambientcg.com/view?id=Leather024">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric05</td><td class="num">Fabric078</td><td><a href="https://ambientcg.com/view?id=Fabric078">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric06</td><td class="num">Fabric060</td><td><a href="https://ambientcg.com/view?id=Fabric060">ambientcg.com</a></td></tr>
-      <tr><td class="num">Lava01</td><td class="num">Lava005</td><td><a href="https://ambientcg.com/view?id=Lava005">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal01</td><td class="num">Metal011</td><td><a href="https://ambientcg.com/view?id=Metal011">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal02</td><td class="num">Metal012</td><td><a href="https://ambientcg.com/view?id=Metal012">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal03</td><td class="num">Metal048A</td><td><a href="https://ambientcg.com/view?id=Metal048A">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal04</td><td class="num">Metal027</td><td><a href="https://ambientcg.com/view?id=Metal027">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal05</td><td class="num">MetalPlates008</td><td><a href="https://ambientcg.com/view?id=MetalPlates008">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone01</td><td class="num">Marble002</td><td><a href="https://ambientcg.com/view?id=Marble002">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone02</td><td class="num">Marble021</td><td><a href="https://ambientcg.com/view?id=Marble021">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone03</td><td class="num">Onyx006</td><td><a href="https://ambientcg.com/view?id=Onyx006">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone04</td><td class="num">Concrete015</td><td><a href="https://ambientcg.com/view?id=Concrete015">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone05</td><td class="num">Travertine014</td><td><a href="https://ambientcg.com/view?id=Travertine014">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood01</td><td class="num">Wood024</td><td><a href="https://ambientcg.com/view?id=Wood024">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood02</td><td class="num">Wood028</td><td><a href="https://ambientcg.com/view?id=Wood028">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood03</td><td class="num">Wood051</td><td><a href="https://ambientcg.com/view?id=Wood051">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood04</td><td class="num">Wood030</td><td><a href="https://ambientcg.com/view?id=Wood030">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood05</td><td class="num">Wicker013</td><td><a href="https://ambientcg.com/view?id=Wicker013">ambientcg.com</a></td></tr>
-    </table></div>
-    <p>The textures were downscaled, converted in bit depth, and renamed for this package. CC0 places no restriction on modification or redistribution. Glass01 and Glass02 in <code>Materials/Common/</code> use no textures.</p>
+    <p>For the assets below, <strong>the VN3 restrictions do not apply and the CC0 license takes precedence.</strong></p>
+    <p>Scope: the textures in the Textures/Common directory</p>
   </section>
 
   <section id="contact">
@@ -305,7 +266,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><th>X</th><td><a href="https://x.com/kinari_yugijo">@kinari_yugijo</a></td></tr>
       <tr><th>Shop</th><td><a href="https://kinari-yugijo.booth.pm/">kinari-yugijo.booth.pm</a></td></tr>
     </table></div>
-    <p>Bug reports and requests are welcome. Thank you for your purchase.</p>
   </section>
 
   <section id="history">

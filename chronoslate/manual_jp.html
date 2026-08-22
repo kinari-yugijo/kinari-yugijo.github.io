@@ -115,8 +115,8 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <a href="#env"><span>📦</span>動作環境</a>
     <a href="#setup"><span>🔰</span>導入手順</a>
     <a href="#config"><span>⚙️</span>時刻の設定</a>
-    <a href="#size"><span>📐</span>大きさと配置</a>
-    <a href="#look"><span>🎨</span>見た目を変える</a>
+    <a href="#size"><span>📐</span>置き方</a>
+    <a href="#look"><span>🎨</span>見た目のカスタマイズ</a>
     <a href="#faq"><span>❓</span>よくあるご質問</a>
     <a href="#terms"><span>📜</span>利用規約</a>
     <a href="#credits"><span>🌱</span>使用素材</a>
@@ -131,7 +131,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h1>クロノスレート 説明書</h1>
     <div class="lede">
       <p>VRChat用の立体時計ギミックです。</p>
-      <p>同梱しているマテリアルを差し替えることで、雰囲気に合わせたカスタマイズが可能です</p>
+      <p>同梱しているマテリアルを差し替えることで、雰囲気に合わせたカスタマイズが可能です。</p>
       <p>VRChatのネットワーク時刻を時と分で表示します。</p>
     </div>
 
@@ -178,66 +178,64 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><th>項目</th><th>説明</th><th>既定値</th></tr>
       <tr><td>Utc Offset Hours</td><td>表示する時刻のタイムゾーン</td><td class="num">9</td></tr>
     </table></div>
-    <p><strong>小数で指定できます。</strong>30分・45分ずれのタイムゾーンにも対応しています。負の値も使えます。</p>
+    <p><strong>小数で指定できます。</strong>インドの<span class="num">5.5</span>、ネパールの<span class="num">5.75</span>のような30分・45分ずれのタイムゾーンにも対応しています。負の値も使えます。</p>
     <div class="tw"><table>
       <tr><th>地域</th><th>設定値</th></tr>
       <tr><td>日本（JST）</td><td class="num">9</td></tr>
-      <tr><td>韓国（KST）</td><td class="num">9</td></tr>
-      <tr><td>中国・台湾（CST）</td><td class="num">8</td></tr>
-      <tr><td>ネパール（NPT）</td><td class="num">5.75</td></tr>
-      <tr><td>インド（IST）</td><td class="num">5.5</td></tr>
-      <tr><td>フランス・ドイツ（CET）</td><td class="num">1</td></tr>
       <tr><td>イギリス（GMT）</td><td class="num">0</td></tr>
-      <tr><td>アメリカ東海岸（EST）</td><td class="num">-5</td></tr>
       <tr><td>アメリカ西海岸（PST）</td><td class="num">-8</td></tr>
     </table></div>
-    <div class="note">
-      <p><strong>夏時間（サマータイム）は自動で切り替わりません。</strong>固定のオフセットを表示するためです。
-      ヨーロッパやアメリカのように夏時間がある地域に合わせる場合は、切り替わりのたびに値を1増やす・戻す操作が必要です
-      （イギリスなら<span class="num">0</span>→<span class="num">1</span>、アメリカ西海岸なら<span class="num">-8</span>→<span class="num">-7</span>）。
-      日本・韓国・中国・インドには夏時間がないので、一度設定すればそのままで問題ありません。</p>
-    </div>
-    <p>表示は<strong>時 : 分</strong>です。秒は表示しません。</p>
   </section>
 
   <section id="size">
-    <h2>📐 大きさと配置</h2>
-    <p>既定のサイズは<span class="num">約5.03m × 1.82m × 0.49m</span>です。広い壁面を想定した寸法なので、卓上や小さめの壁に置く場合はルートのScaleで縮めてください。</p>
-    <p>壁掛け・自立・宙吊りなど設置方法は問いません。当たり判定やインタラクションを持たないため、プレイヤーの移動を妨げることもありません。</p>
+    <h2>📐 置き方</h2>
+    <p>デフォルトサイズは大きめとなっているので、卓上に置く場合はルートのTransformのScaleで調整してください。</p>
+    <p>壁掛けや宙づりでの表示に向く方法として
+    時計背景を非表示にすることができます。<br>
+    背景非表示にする場合は以下のGameObjectを非アクティブにしてください。</p>
+    <p><b>ChronoSlate>ChronoSlate_Frame>Back</b></p>
+    <p><b>ChronoSlate>ChronoSlate_Frame>Frame>FrameBack</b></p>
   </section>
 
   <section id="look">
-    <h2>🎨 見た目を変える</h2>
-    <p>Rendererのマテリアルを差し替えるだけで質感が変わります。<strong><code>Common</code>の素材は枠・数字・背面のどこにでも使えます。</strong>部位を限定していません。</p>
+    <h2>🎨 見た目のカスタマイズ</h2>
+    <p>時計のフレーム、背景、数字の見た目がカスタマイズ可能です。<br>
+      各種マテリアルを用意していますので、ぜひ好みの見た目を探してみてください。</p>
+
+    <div class="note">
+      <p><b>数字の見た目の変更方法について</b></p>
+      <p>1.Hierarchy上のChronoSlateを右クリック<br>
+      2.きなりの遊戯場>ChronoSlate>数字のマテリアルを一括変更<br>
+      3.ウィンドウの「変更マテリアル」の項目に任意のマテリアルを設定</p>
+    </div>
 
     <h3>Materials/Common — 24種</h3>
+    <p>このディレクトリのマテリアルはフレーム・数字・背景のどこにでも使用可能です。</p>
     <ul class="chips">
       <li>Fabric01–06</li><li>Glass01–02</li><li>Lava01</li><li>Metal01–05</li><li>Stone01–05</li><li>Wood01–05</li>
     </ul>
 
-    <h3>Materials/Back — 背面用6種</h3>
+    <h3>Materials/Back — 背景用6種</h3>
+    <p>背景用に使うことを想定したマテリアルです。</p>
     <ul class="chips"><li>Emission01</li><li>Emission02</li><li>Emission03</li><li>Emission04</li><li>Emission05</li><li>Emission06</li></ul>
 
     <h3>Materials/Number — 数字用6種</h3>
+    <p>数字用に使うことを想定したマテリアルです。</p>
     <ul class="chips"><li>Emission1</li><li>Emission2</li><li>Emission3</li><li>Glass1</li><li>Glitter1</li><li>White</li></ul>
 
     <div class="note">
-      <p><strong>Glass系は描画負荷が高めです。</strong><code>Common_Glass01</code>/<code>Common_Glass02</code>/<code>Number_Glass1</code>はPoiyomi Toon Grab Passを使用しています。GrabPassは負荷が高く、ミラー内で意図しない見え方になる場合があります。負荷が気になるワールドでは他の素材をご利用ください。</p>
+      <p><strong>Glass系は描画負荷が高めです。</strong><code>Common_Glass01</code>/<code>Common_Glass02</code>/<code>Number_Glass1</code>はPoiyomi Toon Grab Passを使用しています。負荷が気になるワールドでは他のマテリアルをご利用ください。</p>
     </div>
   </section>
 
   <section id="faq">
     <h2>❓ よくあるご質問</h2>
     <h3>時刻がずれています</h3>
-    <p>UTCオフセットの設定をご確認ください。日本標準時なら<code>9</code>です。</p>
+    <p>「時刻の設定」の項目をご確認ください。日本標準時なら9です。</p>
     <h3>マテリアルがピンクになります</h3>
-    <p>Poiyomi Toonが導入されていません。「動作環境」をご確認ください。</p>
-    <h3>Questで使えますか</h3>
-    <p>使えません。PoiyomiがQuest非対応のためです。</p>
+    <p>Poiyomi Toonが導入されていない可能性があります。「動作環境」の項目をご確認ください。</p>
     <h3>秒は表示できますか</h3>
-    <p>できません。表示は4桁で、時 : 分 の固定です。</p>
-    <h3>プレイヤーごとに違う時刻を出せますか</h3>
-    <p>できません。ワールド内で共有される時刻のみを扱う設計です。</p>
+    <p>できません。表示は4桁かつ、時:分の固定です。</p>
   </section>
 
   <section id="terms">
@@ -257,41 +255,8 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="credits">
     <h2>🌱 使用素材</h2>
-    <p>利用規約の「特記事項」に記載のとおり、本データの一部には<strong>CC0ライセンスの第三者素材</strong>が含まれます。<strong>これらのCC0素材にはVN3ライセンスの制限（再配布の禁止等）は適用されず、元のCC0ライセンスが優先されます。</strong></p>
-    <div class="tw"><table>
-      <tr><th>区分</th><th>対象</th></tr>
-      <tr><td>CC0（<a href="https://ambientcg.com/">ambientCG</a>）</td><td><code>Textures/Common/</code>配下の全76枚</td></tr>
-      <tr><td>自作</td><td>上記以外すべて（モデル・マテリアル・プレハブ・スクリプト、<code>Textures/Back/</code> 5枚、<code>Textures/Number/</code> 1枚）</td></tr>
-    </table></div>
-
-    <h3>CC0素材の内訳（ambientCG）</h3>
-    <p>クレジット表記はCC0のため義務ではありませんが、出所を明らかにするため列挙します。ライセンス全文は<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>をご確認ください。</p>
-    <div class="tw"><table>
-      <tr><th>フォルダ</th><th>元素材ID</th><th>出典</th></tr>
-      <tr><td class="num">Fabric01</td><td class="num">Fabric004</td><td><a href="https://ambientcg.com/view?id=Fabric004">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric02</td><td class="num">Fabric048</td><td><a href="https://ambientcg.com/view?id=Fabric048">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric03</td><td class="num">Leather028</td><td><a href="https://ambientcg.com/view?id=Leather028">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric04</td><td class="num">Leather024</td><td><a href="https://ambientcg.com/view?id=Leather024">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric05</td><td class="num">Fabric078</td><td><a href="https://ambientcg.com/view?id=Fabric078">ambientcg.com</a></td></tr>
-      <tr><td class="num">Fabric06</td><td class="num">Fabric060</td><td><a href="https://ambientcg.com/view?id=Fabric060">ambientcg.com</a></td></tr>
-      <tr><td class="num">Lava01</td><td class="num">Lava005</td><td><a href="https://ambientcg.com/view?id=Lava005">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal01</td><td class="num">Metal011</td><td><a href="https://ambientcg.com/view?id=Metal011">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal02</td><td class="num">Metal012</td><td><a href="https://ambientcg.com/view?id=Metal012">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal03</td><td class="num">Metal048A</td><td><a href="https://ambientcg.com/view?id=Metal048A">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal04</td><td class="num">Metal027</td><td><a href="https://ambientcg.com/view?id=Metal027">ambientcg.com</a></td></tr>
-      <tr><td class="num">Metal05</td><td class="num">MetalPlates008</td><td><a href="https://ambientcg.com/view?id=MetalPlates008">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone01</td><td class="num">Marble002</td><td><a href="https://ambientcg.com/view?id=Marble002">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone02</td><td class="num">Marble021</td><td><a href="https://ambientcg.com/view?id=Marble021">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone03</td><td class="num">Onyx006</td><td><a href="https://ambientcg.com/view?id=Onyx006">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone04</td><td class="num">Concrete015</td><td><a href="https://ambientcg.com/view?id=Concrete015">ambientcg.com</a></td></tr>
-      <tr><td class="num">Stone05</td><td class="num">Travertine014</td><td><a href="https://ambientcg.com/view?id=Travertine014">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood01</td><td class="num">Wood024</td><td><a href="https://ambientcg.com/view?id=Wood024">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood02</td><td class="num">Wood028</td><td><a href="https://ambientcg.com/view?id=Wood028">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood03</td><td class="num">Wood051</td><td><a href="https://ambientcg.com/view?id=Wood051">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood04</td><td class="num">Wood030</td><td><a href="https://ambientcg.com/view?id=Wood030">ambientcg.com</a></td></tr>
-      <tr><td class="num">Wood05</td><td class="num">Wicker013</td><td><a href="https://ambientcg.com/view?id=Wicker013">ambientcg.com</a></td></tr>
-    </table></div>
-    <p>同梱にあたり、解像度の縮小・ビット深度の変更・ファイル名の変更を行っています。CC0のため改変・再配布とも制限はありません。<code>Materials/Common/</code>のGlass01・Glass02はテクスチャを使用していません。</p>
+    <p>以下の対象素材には<strong>VN3ライセンスの制限は適用されず、CC0ライセンスが優先されます。</strong></p>
+    <p>対象　Textures/Commonディレクトリ内のテクスチャ</p>
   </section>
 
   <section id="contact">
@@ -301,7 +266,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
       <tr><th>X</th><td><a href="https://x.com/kinari_yugijo">@kinari_yugijo</a></td></tr>
       <tr><th>ショップ</th><td><a href="https://kinari-yugijo.booth.pm/">kinari-yugijo.booth.pm</a></td></tr>
     </table></div>
-    <p>不具合報告・ご要望はお気軽にどうぞ。ご購入ありがとうございます。</p>
   </section>
 
   <section id="history">
