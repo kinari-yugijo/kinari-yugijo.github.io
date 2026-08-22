@@ -131,7 +131,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h1>クロノスレート 説明書</h1>
     <div class="lede">
       <p>VRChat用の立体時計ギミックです。</p>
-      <p>同梱しているマテリアルを差し替えることで、雰囲気に合わせたカスタマイズが可能です。</p>
+      <p>同梱しているマテリアルを差し替えることで、<br>雰囲気に合わせたカスタマイズが可能です。</p>
       <p>VRChatのネットワーク時刻を時と分で表示します。</p>
     </div>
 
@@ -158,37 +158,23 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h2>🔰 導入手順</h2>
     <ol class="steps">
       <li>同梱しているunitypackageをインポートします<br>
-        （unitypackageをD&DあるいはAssets>Import Package>Custom Package）<br>Assets/KinariYugijo/ChronoSlateに展開されます。</li>
+        （unitypackageをD&DあるいはAssets>Import Package>Custom Package）<br>Assets/KinariYugijo/ChronoSlateに本データが展開されます。</li>
       <li>Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefabをシーンのHierarchyへドラッグ＆ドロップします。</li>
       <li>位置・向き・大きさを調整し、日本以外のタイムゾーンを使用する場合は、次の「時刻の設定」でタイムゾーンを合わせます。</li>
     </ol>
-
-    <h3>プレハブの種類</h3>
-    <p>あらかじめ見た目を調整したプレハブを同梱しています。どれもそのまま使えます。</p>
-    <div class="tw"><table>
-      <tr><th>プレハブ</th><th>内容</th></tr>
-      <tr><td>ChronoSlate</td><td>標準。時計を大きく表示します</td></tr>
-      <tr><td>ChronoSlate_Picture</td><td>画像表示がメイン。背景に好きな画像を出せます</td></tr>
-      <tr><td>ChronoSlate_MiniTimer</td><td>時計を小さく表示します</td></tr>
-      <tr><td>ChronoSlate_NoBack</td><td>背景を無くしています</td></tr>
-    </table></div>
   </section>
 
   <section id="config">
     <h2>⚙️ 時刻の設定</h2>
-    <p>配置したChronoSlateにあるChronoSlateコンポーネントで設定します。</p>
+    <p>配置したChronoSlateのChronoSlateコンポーネントの<br>Utc Offset Hoursでタイムゾーンを設定します。<br>
+      小数、負の値を指定可能です。
+    </p>
 
     <figure class="shot">
       <img src="img/timezone.png" width="294" height="147" decoding="async"
            alt="InspectorのChronoSlateコンポーネント。Timeの項目にUtc Offset Hoursのスライダーがあり、値は9">
-      <figcaption>InspectorのTimeにあるUtc Offset Hoursで設定します。</figcaption>
     </figure>
 
-    <div class="tw"><table>
-      <tr><th>項目</th><th>説明</th><th>既定値</th></tr>
-      <tr><td>Utc Offset Hours</td><td>表示する時刻のタイムゾーン</td><td class="num">9</td></tr>
-    </table></div>
-    <p><strong>小数で指定できます。</strong>インドの<span class="num">5.5</span>、ネパールの<span class="num">5.75</span>のような30分・45分ずれのタイムゾーンにも対応しています。負の値も使えます。</p>
     <div class="tw"><table>
       <tr><th>地域</th><th>設定値</th></tr>
       <tr><td>日本（JST）</td><td class="num">9</td></tr>
@@ -199,12 +185,8 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="size">
     <h2>📐 置き方</h2>
-    <p>デフォルトサイズは大きめとなっているので、卓上に置く場合はルートのTransformのScaleで調整してください。</p>
-    <p>壁掛けや宙づりでの表示に向く方法として
-    時計背景を非表示にすることができます。<br>
-    背景非表示にする場合は以下のGameObjectを非アクティブにしてください。</p>
-    <p><b>ChronoSlate>ChronoSlate_Frame>Back</b></p>
-    <p><b>ChronoSlate>ChronoSlate_Frame>Frame>FrameBack</b></p>
+    <p>デフォルトサイズは大きめとなっているので、<br>卓上に置く場合はルートのTransformのScaleで調整してください。</p>
+
   </section>
 
   <section id="look">
@@ -212,18 +194,51 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <p>時計のフレーム、背景、数字の見た目がカスタマイズ可能です。<br>
       各種マテリアルを用意していますので、ぜひ好みの見た目を探してみてください。</p>
 
-    <div class="note">
-      <p><b>数字の見た目の変更方法について</b></p>
-      <p>1.Hierarchy上のChronoSlateを右クリック<br>
+    <h3>プレハブの種類</h3>
+    <p>見た目を調整したプレハブを同梱しています。</p>
+    <div class="tw"><table>
+      <tr><th>プレハブ</th><th>内容</th></tr>
+      <tr><td>ChronoSlate</td><td>標準のChronoSlate</td></tr>
+      <tr><td>ChronoSlate_Picture</td><td>画像表示がメインにしたChronoSlate。背景に好きな画像を設定できます</td></tr>
+      <tr><td>ChronoSlate_MiniTimer</td><td>時計を右下に小さく表示するレイアウトのChronoSlate。飾り付けを想定しています</td></tr>
+      <tr><td>ChronoSlate_NoBack</td><td>背景を無くしたChronoSlate。壁掛けや控えめな設置に向いているスタイルです。</td></tr>
+    </table></div>
+
+    <h3>ChronoSlateの背景を消す</h3>
+    <p>自身で背景非表示にする場合はChronoSlateの<br>
+      以下のGameObjectを非アクティブにしてください。</p>
+    <p>ChronoSlate>ChronoSlate_Frame>Back</p>
+    <p>ChronoSlate>ChronoSlate_Frame>Frame>FrameBack</p>
+
+    <figure class="shot">
+      <img src="img/no_back.png" width="321" height="91" decoding="async"
+           alt="HierarchyでChronoSlate_Frame配下のBackとFrame>FrameBackを選択しているところ">
+      <figcaption>この2つを非アクティブにします。</figcaption>
+    </figure>
+
+    <h3>背景に好きな画像を出す</h3>
+    <p><code>Materials/Back/ChronoSlate_Back_Picture01</code>の<br>
+        Main Textureを差し替えると、任意の画像を表示できます。<br>
+      そのマテリアルをChronoSlate>ChronoSlate_Frame>BackのMeshRenderに設定してください。<br>
+      ChronoSlate_Picture.prefabでは該当マテリアルを使用しているので、<br>
+      prefabを設置するだけで画像の表示が可能です。</p>
+
+    <figure class="shot">
+      <img src="img/change_back_image.png" width="304" height="261" decoding="async"
+           alt="Poiyomi ToonのInspector。Color &amp; NormalsのColor &amp; Alphaの下にTextureの枠がある">
+      <figcaption>PoiyomiのColor &amp; Normals→Color &amp; Alphaの下にあるTextureに画像を入れます。</figcaption>
+    </figure>
+
+    <h3>数字の見た目の変更方法</h3>
+    <p>1.Hierarchy上のChronoSlateを右クリック<br>
       2.Kinari-Yugijo>ChronoSlate>Bulk Change Digit Materials<br>
       3.ウィンドウのNew materialに任意のマテリアルを設定</p>
-    </div>
 
-    <div class="note">
-      <p><b>背景に好きな画像を出す</b></p>
-      <p><code>Materials/Back/ChronoSlate_Back_Picture01</code>のMain Textureを差し替えると、背景に任意の画像を表示できます。<br>
-      ChronoSlate_Pictureプレハブはこのマテリアルを最初から使っています。</p>
-    </div>
+    <figure class="shot">
+      <img src="img/right_menu_setup_number_materials.png" width="594" height="73" decoding="async"
+           alt="右クリックメニュー。Kinari-YugijoからChronoSlate、Bulk Change Digit Materialsと辿る">
+      <figcaption>右クリックメニューの位置です。</figcaption>
+    </figure>
 
     <h3>Materials/Common — 25種</h3>
     <p>このディレクトリのマテリアルはフレーム・数字・背景のどこにでも使用可能です。</p>
@@ -247,9 +262,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <section id="faq">
     <h2>❓ よくあるご質問</h2>
     <h3>時刻がずれています</h3>
-    <p>「時刻の設定」の項目をご確認ください。日本標準時なら9です。</p>
+    <p>「時刻の設定」の項目をご確認ください。<br>
+      日本標準時なら9となります。</p>
     <h3>マテリアルがピンクになります</h3>
-    <p>Poiyomi Toonが導入されていない可能性があります。「動作環境」の項目をご確認ください。</p>
+    <p>Poiyomi Toonが導入されていない可能性があります。<br>「動作環境」の項目をご確認ください。</p>
     <h3>秒は表示できますか</h3>
     <p>できません。表示は4桁かつ、時:分の固定です。</p>
   </section>

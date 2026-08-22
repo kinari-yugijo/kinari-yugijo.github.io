@@ -158,37 +158,23 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h2>🔰 Setup</h2>
     <ol class="steps">
       <li>Import the bundled unitypackage<br>
-        (drag and drop it, or use Assets &gt; Import Package &gt; Custom Package)<br>It unpacks to Assets/KinariYugijo/ChronoSlate.</li>
+        (drag and drop it, or use Assets&gt;Import Package&gt;Custom Package)<br>The data unpacks to Assets/KinariYugijo/ChronoSlate.</li>
       <li>Drag Assets/KinariYugijo/ChronoSlate/Prefabs/ChronoSlate.prefab into your scene hierarchy.</li>
       <li>Adjust the position, rotation and scale. If you are outside Japan, set your time zone in the next section.</li>
     </ol>
-
-    <h3>Which prefab to use</h3>
-    <p>Four ready-made prefabs are included. Each one works as-is.</p>
-    <div class="tw"><table>
-      <tr><th>Prefab</th><th>What it is</th></tr>
-      <tr><td>ChronoSlate</td><td>The standard one. Shows the clock large</td></tr>
-      <tr><td>ChronoSlate_Picture</td><td>Picture-first. Puts an image of your choice on the backplate</td></tr>
-      <tr><td>ChronoSlate_MiniTimer</td><td>Shows the clock small</td></tr>
-      <tr><td>ChronoSlate_NoBack</td><td>No backplate</td></tr>
-    </table></div>
   </section>
 
   <section id="config">
     <h2>⚙️ Time zone</h2>
-    <p>Select the prefab root <code>ChronoSlate</code> and set the field on the <strong>ChronoSlate</strong> component.</p>
+    <p>Set the time zone with Utc Offset Hours<br>on the ChronoSlate component of the ChronoSlate you placed.<br>
+      Decimals and negative values are accepted.
+    </p>
 
     <figure class="shot">
       <img src="img/timezone.png" width="294" height="147" decoding="async"
            alt="The ChronoSlate component in the Inspector, showing the Utc Offset Hours slider set to 9">
-      <figcaption>Set <code>Utc Offset Hours</code> under Time in the Inspector.</figcaption>
     </figure>
 
-    <div class="tw"><table>
-      <tr><th>Field</th><th>Meaning</th><th>Default</th></tr>
-      <tr><td>Utc Offset Hours</td><td>Time zone of the displayed time</td><td class="num">9</td></tr>
-    </table></div>
-    <p><strong>Decimals are supported</strong>, so 30- and 45-minute offsets work — India is <span class="num">5.5</span>, Nepal <span class="num">5.75</span>. Negative values are fine too.</p>
     <div class="tw"><table>
       <tr><th>Region</th><th>Value</th></tr>
       <tr><td>Japan (JST)</td><td class="num">9</td></tr>
@@ -199,11 +185,8 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
 
   <section id="size">
     <h2>📐 Placement</h2>
-    <p>The default size is on the large side, so scale it with the Transform on the prefab root if you want it on a desk.</p>
-    <p>For a wall mount or a hanging setup, you can hide the backplate.<br>
-    To do that, deactivate these GameObjects:</p>
-    <p><b>ChronoSlate&gt;ChronoSlate_Frame&gt;Back</b></p>
-    <p><b>ChronoSlate&gt;ChronoSlate_Frame&gt;Frame&gt;FrameBack</b></p>
+    <p>The default size is on the large side, so<br>use the Scale on the root Transform if you want it on a desk.</p>
+
   </section>
 
   <section id="look">
@@ -211,18 +194,51 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <p>The frame, the backplate and the digits can each be re-finished.<br>
       A range of materials is included, so try a few and find a look you like.</p>
 
-    <div class="note">
-      <p><b>Changing the digit material</b></p>
-      <p>1. Right-click ChronoSlate in the Hierarchy<br>
-      2. Choose Kinari-Yugijo&gt;ChronoSlate&gt;Bulk Change Digit Materials<br>
-      3. Set any material in the window's New material field</p>
-    </div>
+    <h3>Which prefab to use</h3>
+    <p>Prefabs with the look already set up are included.</p>
+    <div class="tw"><table>
+      <tr><th>Prefab</th><th>What it is</th></tr>
+      <tr><td>ChronoSlate</td><td>The standard ChronoSlate</td></tr>
+      <tr><td>ChronoSlate_Picture</td><td>A picture-first ChronoSlate. You can put an image of your choice on the backplate</td></tr>
+      <tr><td>ChronoSlate_MiniTimer</td><td>A ChronoSlate laid out with the clock small in the lower right. Meant for decoration</td></tr>
+      <tr><td>ChronoSlate_NoBack</td><td>A ChronoSlate with no backplate. Suits a wall mount or a more restrained placement.</td></tr>
+    </table></div>
 
-    <div class="note">
-      <p><b>Putting your own image on the backplate</b></p>
-      <p>Replace the Main Texture on <code>Materials/Back/ChronoSlate_Back_Picture01</code> to show any image you like.<br>
-      The ChronoSlate_Picture prefab already uses this material.</p>
-    </div>
+    <h3>Hiding the backplate</h3>
+    <p>To hide the backplate yourself,<br>
+      deactivate these GameObjects under ChronoSlate.</p>
+    <p>ChronoSlate&gt;ChronoSlate_Frame&gt;Back</p>
+    <p>ChronoSlate&gt;ChronoSlate_Frame&gt;Frame&gt;FrameBack</p>
+
+    <figure class="shot">
+      <img src="img/no_back.png" width="321" height="91" decoding="async"
+           alt="The Hierarchy with Back and Frame&gt;FrameBack selected under ChronoSlate_Frame">
+      <figcaption>Deactivate these two.</figcaption>
+    </figure>
+
+    <h3>Putting your own image on the backplate</h3>
+    <p>Replace the Main Texture on <code>Materials/Back/ChronoSlate_Back_Picture01</code><br>
+      to show any image you like.<br>
+      Assign that material to the MeshRenderer on ChronoSlate&gt;ChronoSlate_Frame&gt;Back.<br>
+      The ChronoSlate_Picture.prefab already uses this material,<br>
+      so dropping that prefab in is enough to show an image.</p>
+
+    <figure class="shot">
+      <img src="img/change_back_image.png" width="304" height="261" decoding="async"
+           alt="The Poiyomi Toon inspector, with a Texture slot under Color &amp; Normals, Color &amp; Alpha">
+      <figcaption>Put the image in Texture, under Color &amp; Normals → Color &amp; Alpha in Poiyomi.</figcaption>
+    </figure>
+
+    <h3>Changing the digit material</h3>
+    <p>1. Right-click ChronoSlate in the Hierarchy<br>
+      2. Kinari-Yugijo&gt;ChronoSlate&gt;Bulk Change Digit Materials<br>
+      3. Set any material in the window's New material field</p>
+
+    <figure class="shot">
+      <img src="img/right_menu_setup_number_materials.png" width="594" height="73" decoding="async"
+           alt="The right-click menu going from Kinari-Yugijo to ChronoSlate to Bulk Change Digit Materials">
+      <figcaption>Where the menu item lives.</figcaption>
+    </figure>
 
     <h3>Materials/Common — 25 finishes</h3>
     <p>Materials in this folder can be used anywhere — frame, digits or backplate.</p>
@@ -239,16 +255,17 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <ul class="chips"><li>Emission01</li><li>Emission02</li><li>Emission03</li><li>Glass01</li><li>White01</li></ul>
 
     <div class="note">
-      <p><strong>The glass finishes are expensive to render.</strong> <code>Common_Glass01</code>, <code>Common_Glass02</code> and <code>Number_Glass01</code> use Poiyomi Toon Grab Pass. Pick another material if your world is tight on performance.</p>
+      <p><strong>The glass finishes are expensive to render.</strong> <code>Common_Glass01</code>/<code>Common_Glass02</code>/<code>Number_Glass01</code> use Poiyomi Toon Grab Pass. Pick another material if your world is tight on performance.</p>
     </div>
   </section>
 
   <section id="faq">
     <h2>❓ FAQ</h2>
     <h3>The time is wrong</h3>
-    <p>See the "Time zone" section. Japan Standard Time is 9.</p>
+    <p>See the "Time zone" section.<br>
+      Japan Standard Time is 9.</p>
     <h3>Everything is magenta</h3>
-    <p>Poiyomi Toon may not be installed. See the "Requirements" section.</p>
+    <p>Poiyomi Toon may not be installed.<br>See the "Requirements" section.</p>
     <h3>Can it show seconds?</h3>
     <p>No. The display is four digits, fixed to hours:minutes.</p>
   </section>
