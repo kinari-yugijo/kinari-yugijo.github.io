@@ -111,17 +111,17 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <p class="brand">クロノスレート<small>CHRONOSLATE v1.0.0</small></p>
   <p class="lang"><span class="on">日本語</span>/<a href="manual_en.html">ENGLISH</a></p>
   <nav>
-    <a href="#about"><span>🕰</span>ChronoSlateとは</a>
-    <a href="#env"><span>📦</span>動作環境</a>
-    <a href="#setup"><span>🔰</span>導入手順</a>
-    <a href="#config"><span>⚙️</span>時刻の設定</a>
-    <a href="#size"><span>📐</span>置き方</a>
-    <a href="#look"><span>🎨</span>見た目のカスタマイズ</a>
-    <a href="#faq"><span>❓</span>よくあるご質問</a>
-    <a href="#terms"><span>📜</span>利用規約</a>
-    <a href="#credits"><span>🌱</span>使用素材</a>
-    <a href="#contact"><span>✉️</span>お問い合わせ</a>
-    <a href="#history"><span>📌</span>更新履歴</a>
+    <a href="#about">ChronoSlateとは</a>
+    <a href="#env">動作環境</a>
+    <a href="#setup">導入手順</a>
+    <a href="#config">時刻の設定</a>
+    <a href="#size">置き方</a>
+    <a href="#look">見た目のカスタマイズ</a>
+    <a href="#faq">よくあるご質問</a>
+    <a href="#terms">利用規約</a>
+    <a href="#credits">使用素材</a>
+    <a href="#contact">お問い合わせ</a>
+    <a href="#history">更新履歴</a>
   </nav>
 </aside>
 
@@ -142,7 +142,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="env">
-    <h2>📦 動作環境</h2>
+    <h2>動作環境</h2>
     <div class="tw"><table>
       <tr><th>項目</th><th>バージョン</th></tr>
       <tr><td><strong>Unity</strong></td><td class="num">2022.3.22f1</td></tr>
@@ -155,7 +155,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="setup">
-    <h2>🔰 導入手順</h2>
+    <h2>導入手順</h2>
     <ol class="steps">
       <li>同梱しているunitypackageをインポートします<br>
         （unitypackageをD&DあるいはAssets>Import Package>Custom Package）<br>Assets/KinariYugijo/ChronoSlateに本データが展開されます。</li>
@@ -165,7 +165,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="config">
-    <h2>⚙️ 時刻の設定</h2>
+    <h2>時刻の設定</h2>
     <p>配置したChronoSlateのChronoSlateコンポーネントの<br>Utc Offset Hoursでタイムゾーンを設定します。<br>
       小数、負の値を指定可能です。
     </p>
@@ -184,13 +184,13 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="size">
-    <h2>📐 置き方</h2>
+    <h2>置き方</h2>
     <p>デフォルトサイズは大きめとなっているので、<br>卓上に置く場合はルートのTransformのScaleで調整してください。</p>
 
   </section>
 
   <section id="look">
-    <h2>🎨 見た目のカスタマイズ</h2>
+    <h2>見た目のカスタマイズ</h2>
     <p>時計のフレーム、背景、数字の見た目がカスタマイズ可能です。<br>
       各種マテリアルを用意していますので、ぜひ好みの見た目を探してみてください。</p>
 
@@ -207,18 +207,15 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h3>ChronoSlateの背景を消す</h3>
     <p>自身で背景非表示にする場合はChronoSlateの<br>
       以下のGameObjectを非アクティブにしてください。</p>
-    <p>ChronoSlate>ChronoSlate_Frame>Back</p>
-    <p>ChronoSlate>ChronoSlate_Frame>Frame>FrameBack</p>
-
     <figure class="shot">
       <img src="img/no_back.png" width="321" height="91" decoding="async"
            alt="HierarchyでChronoSlate_Frame配下のBackとFrame>FrameBackを選択しているところ">
-      <figcaption>この2つを非アクティブにします。</figcaption>
+      <figcaption>Back, FrameBackを非アクティブにします。</figcaption>
     </figure>
 
     <h3>背景に好きな画像を出す</h3>
     <p><code>Materials/Back/ChronoSlate_Back_Picture01</code>の<br>
-        Main Textureを差し替えると、任意の画像を表示できます。<br>
+        Textureを差し替えると、任意の画像を表示できます。<br>
       そのマテリアルをChronoSlate>ChronoSlate_Frame>BackのMeshRenderに設定してください。<br>
       ChronoSlate_Picture.prefabでは該当マテリアルを使用しているので、<br>
       prefabを設置するだけで画像の表示が可能です。</p>
@@ -226,7 +223,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <figure class="shot">
       <img src="img/change_back_image.png" width="304" height="261" decoding="async"
            alt="Poiyomi ToonのInspector。Color &amp; NormalsのColor &amp; Alphaの下にTextureの枠がある">
-      <figcaption>PoiyomiのColor &amp; Normals→Color &amp; Alphaの下にあるTextureに画像を入れます。</figcaption>
     </figure>
 
     <h3>数字の見た目の変更方法</h3>
@@ -237,11 +233,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <figure class="shot">
       <img src="img/right_menu_setup_number_materials.png" width="594" height="73" decoding="async"
            alt="右クリックメニュー。Kinari-YugijoからChronoSlate、Bulk Change Digit Materialsと辿る">
-      <figcaption>右クリックメニューの位置です。</figcaption>
     </figure>
 
     <h3>Materials/Common — 25種</h3>
-    <p>このディレクトリのマテリアルはフレーム・数字・背景のどこにでも使用可能です。</p>
+    <p>このディレクトリのマテリアルはフレーム・数字・背景のどのパーツにも使用可能です。</p>
     <ul class="chips">
       <li>Fabric01–06</li><li>Glass01–02</li><li>Glitter01</li><li>Lava01</li><li>Metal01–05</li><li>Stone01–05</li><li>Wood01–05</li>
     </ul>
@@ -260,7 +255,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="faq">
-    <h2>❓ よくあるご質問</h2>
+    <h2>よくあるご質問</h2>
     <h3>時刻がずれています</h3>
     <p>「時刻の設定」の項目をご確認ください。<br>
       日本標準時なら9となります。</p>
@@ -271,7 +266,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="terms">
-    <h2>📜 利用規約</h2>
+    <h2>利用規約</h2>
     <p>本データの利用条件は<strong>VN3ライセンス</strong>に基づきます。規約全文は以下からご確認ください。</p>
     <div class="tw"><table>
       <tr><td>日本語</td><td><a href="https://drive.google.com/file/d/1_O8iS8Vf8poQS152rbFfBSVPwjacY8cm/view?usp=sharing">規約全文 (JP)</a></td></tr>
@@ -286,13 +281,13 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="credits">
-    <h2>🌱 使用素材</h2>
+    <h2>使用素材</h2>
     <p>以下の対象素材には<strong>VN3ライセンスの制限は適用されず、CC0ライセンスが優先されます。</strong></p>
     <p>対象　Textures/Commonディレクトリ内のテクスチャ</p>
   </section>
 
   <section id="contact">
-    <h2>✉️ お問い合わせ</h2>
+    <h2>お問い合わせ</h2>
     <div class="tw"><table>
       <tr><th>メール</th><td><a href="mailto:kinariyugijo@gmail.com">kinariyugijo@gmail.com</a></td></tr>
       <tr><th>X</th><td><a href="https://x.com/kinari_yugijo">@kinari_yugijo</a></td></tr>
@@ -301,7 +296,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="history">
-    <h2>📌 更新履歴</h2>
+    <h2>更新履歴</h2>
     <div class="tw"><table>
       <tr><th>版</th><th>日付</th><th>内容</th></tr>
       <tr><td class="num">v1.0.0</td><td class="num">2026-08-21</td><td>初版公開</td></tr>

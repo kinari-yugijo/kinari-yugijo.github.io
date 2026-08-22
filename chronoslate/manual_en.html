@@ -111,17 +111,17 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   <p class="brand">ChronoSlate<small>MANUAL v1.0.0</small></p>
   <p class="lang"><a href="manual_jp.html">日本語</a> / <span class="on">ENGLISH</span></p>
   <nav>
-    <a href="#about"><span>🕰</span>What it is</a>
-    <a href="#env"><span>📦</span>Requirements</a>
-    <a href="#setup"><span>🔰</span>Setup</a>
-    <a href="#config"><span>⚙️</span>Time zone</a>
-    <a href="#size"><span>📐</span>Placement</a>
-    <a href="#look"><span>🎨</span>Customizing the look</a>
-    <a href="#faq"><span>❓</span>FAQ</a>
-    <a href="#terms"><span>📜</span>License</a>
-    <a href="#credits"><span>🌱</span>Third-party assets</a>
-    <a href="#contact"><span>✉️</span>Contact</a>
-    <a href="#history"><span>📌</span>Changelog</a>
+    <a href="#about">What it is</a>
+    <a href="#env">Requirements</a>
+    <a href="#setup">Setup</a>
+    <a href="#config">Time zone</a>
+    <a href="#size">Placement</a>
+    <a href="#look">Customizing the look</a>
+    <a href="#faq">FAQ</a>
+    <a href="#terms">License</a>
+    <a href="#credits">Third-party assets</a>
+    <a href="#contact">Contact</a>
+    <a href="#history">Changelog</a>
   </nav>
 </aside>
 
@@ -142,7 +142,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="env">
-    <h2>📦 Requirements</h2>
+    <h2>Requirements</h2>
     <div class="tw"><table>
       <tr><th>Item</th><th>Version</th></tr>
       <tr><td><strong>Unity</strong></td><td class="num">2022.3.22f1</td></tr>
@@ -155,7 +155,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="setup">
-    <h2>🔰 Setup</h2>
+    <h2>Setup</h2>
     <ol class="steps">
       <li>Import the bundled unitypackage<br>
         (drag and drop it, or use Assets&gt;Import Package&gt;Custom Package)<br>The data unpacks to Assets/KinariYugijo/ChronoSlate.</li>
@@ -165,7 +165,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="config">
-    <h2>⚙️ Time zone</h2>
+    <h2>Time zone</h2>
     <p>Set the time zone with Utc Offset Hours<br>on the ChronoSlate component of the ChronoSlate you placed.<br>
       Decimals and negative values are accepted.
     </p>
@@ -184,13 +184,13 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="size">
-    <h2>📐 Placement</h2>
+    <h2>Placement</h2>
     <p>The default size is on the large side, so<br>use the Scale on the root Transform if you want it on a desk.</p>
 
   </section>
 
   <section id="look">
-    <h2>🎨 Customizing the look</h2>
+    <h2>Customizing the look</h2>
     <p>The frame, the backplate and the digits can each be re-finished.<br>
       A range of materials is included, so try a few and find a look you like.</p>
 
@@ -207,17 +207,14 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h3>Hiding the backplate</h3>
     <p>To hide the backplate yourself,<br>
       deactivate these GameObjects under ChronoSlate.</p>
-    <p>ChronoSlate&gt;ChronoSlate_Frame&gt;Back</p>
-    <p>ChronoSlate&gt;ChronoSlate_Frame&gt;Frame&gt;FrameBack</p>
-
     <figure class="shot">
       <img src="img/no_back.png" width="321" height="91" decoding="async"
            alt="The Hierarchy with Back and Frame&gt;FrameBack selected under ChronoSlate_Frame">
-      <figcaption>Deactivate these two.</figcaption>
+      <figcaption>Deactivate Back and FrameBack.</figcaption>
     </figure>
 
     <h3>Putting your own image on the backplate</h3>
-    <p>Replace the Main Texture on <code>Materials/Back/ChronoSlate_Back_Picture01</code><br>
+    <p>Replace the Texture on <code>Materials/Back/ChronoSlate_Back_Picture01</code><br>
       to show any image you like.<br>
       Assign that material to the MeshRenderer on ChronoSlate&gt;ChronoSlate_Frame&gt;Back.<br>
       The ChronoSlate_Picture.prefab already uses this material,<br>
@@ -226,7 +223,6 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <figure class="shot">
       <img src="img/change_back_image.png" width="304" height="261" decoding="async"
            alt="The Poiyomi Toon inspector, with a Texture slot under Color &amp; Normals, Color &amp; Alpha">
-      <figcaption>Put the image in Texture, under Color &amp; Normals → Color &amp; Alpha in Poiyomi.</figcaption>
     </figure>
 
     <h3>Changing the digit material</h3>
@@ -237,11 +233,10 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <figure class="shot">
       <img src="img/right_menu_setup_number_materials.png" width="594" height="73" decoding="async"
            alt="The right-click menu going from Kinari-Yugijo to ChronoSlate to Bulk Change Digit Materials">
-      <figcaption>Where the menu item lives.</figcaption>
     </figure>
 
     <h3>Materials/Common — 25 finishes</h3>
-    <p>Materials in this folder can be used anywhere — frame, digits or backplate.</p>
+    <p>Materials in this folder can be used on any part — frame, digits or backplate.</p>
     <ul class="chips">
       <li>Fabric01–06</li><li>Glass01–02</li><li>Glitter01</li><li>Lava01</li><li>Metal01–05</li><li>Stone01–05</li><li>Wood01–05</li>
     </ul>
@@ -260,7 +255,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="faq">
-    <h2>❓ FAQ</h2>
+    <h2>FAQ</h2>
     <h3>The time is wrong</h3>
     <p>See the "Time zone" section.<br>
       Japan Standard Time is 9.</p>
@@ -271,7 +266,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="terms">
-    <h2>📜 License</h2>
+    <h2>License</h2>
     <p>ChronoSlate is licensed under the <strong>VN3 License</strong>. The full text is available in four languages.</p>
     <div class="tw"><table>
       <tr><td>日本語</td><td><a href="https://drive.google.com/file/d/1_O8iS8Vf8poQS152rbFfBSVPwjacY8cm/view?usp=sharing">規約全文 (JP)</a></td></tr>
@@ -286,13 +281,13 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="credits">
-    <h2>🌱 Third-party assets</h2>
+    <h2>Third-party assets</h2>
     <p>For the assets below, <strong>the VN3 restrictions do not apply and the CC0 license takes precedence.</strong></p>
     <p>Scope: the textures in the Textures/Common directory</p>
   </section>
 
   <section id="contact">
-    <h2>✉️ Contact</h2>
+    <h2>Contact</h2>
     <div class="tw"><table>
       <tr><th>Email</th><td><a href="mailto:kinariyugijo@gmail.com">kinariyugijo@gmail.com</a></td></tr>
       <tr><th>X</th><td><a href="https://x.com/kinari_yugijo">@kinari_yugijo</a></td></tr>
@@ -301,7 +296,7 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
   </section>
 
   <section id="history">
-    <h2>📌 Changelog</h2>
+    <h2>Changelog</h2>
     <div class="tw"><table>
       <tr><th>Version</th><th>Date</th><th>Notes</th></tr>
       <tr><td class="num">v1.0.0</td><td class="num">2026-08-21</td><td>Initial release</td></tr>
