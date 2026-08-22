@@ -145,24 +145,21 @@ footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--rail); font
     <h2>動作環境</h2>
     <div class="tw"><table>
       <tr><th>項目</th><th>バージョン</th></tr>
-      <tr><td><strong>Unity</strong></td><td class="num">2022.3.22f1</td></tr>
-      <tr><td><strong>Poiyomi Toon Shader</strong></td><td class="num">9.3.64</td></tr>
+      <tr><td>Unity</td><td class="num">2022.3.22f1</td></tr>
+      <tr><td>Poiyomi Toon Shader</td><td class="num">9.3.64</td></tr>
     </table></div>
     <div class="note">
       <p><strong>Poiyomi Toon</strong><a href="https://www.poiyomi.com/"> https://www.poiyomi.com/</a></p>
       <p>VCC / ALCOM / Boothから入手可能です。</p>
     </div>
 
-    <h3>負荷</h3>
+    <h3>ギミックデータ</h3>
     <div class="tw"><table>
-      <tr><td>ポリゴン数</td><td class="num">約3,300</td></tr>
-      <tr><td>最大マテリアル数</td><td class="num">5</td></tr>
+      <tr><td>ポリゴン数</td><td class="num">最大3,268~最小1,468</td></tr>
+      <tr><td>マテリアル数</td><td class="num">4</td></tr>
     </table></div>
-    <p>ポリゴン数は同時に表示されるぶんの数です。<br>
-      数字は29個のメッシュを出し分けているため、<br>
-      表示していない25個は非アクティブで描画されません。</p>
-    <p>数字29個とコロンは同じマテリアルを共有します。<br>
-      残る4つはフレームのパーツぶんです。</p>
+    <p>ポリゴン数はアクティブなメッシュの最大と最小のポリゴン総数です。<br>
+      マテリアル数はChronoSlate.prefabのマテリアル数です。</p>
   </section>
 
   <section id="terms">
