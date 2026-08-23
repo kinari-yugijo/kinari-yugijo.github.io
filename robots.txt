@@ -1,3 +1,2 @@
-# 頒布開始まで検索エンジンに載せない。公開後にこのファイルを削除するか Disallow を外すこと。
 User-agent: *
-Disallow: /
+Allow: /
